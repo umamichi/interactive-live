@@ -1,0 +1,166 @@
+body {
+  &::before {
+    content: '';
+    width: 100%;
+    height:100vh;
+    position:fixed;
+    z-index:-1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    background-image: url('../images/night_view.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.header {
+  color: #fff;
+  padding-top: 130px;
+  padding-right: 10px;
+  text-align: right;
+  &__1 {
+    font-size: 35px;
+  }
+  &__2 {
+    font-size: 25px;
+    font-weight: normal;
+    padding-right: 5px;
+  }
+}
+
+.comment {
+  text-align: center;
+  margin-top: 40px;
+  height: 265px;
+  &__textarea {
+    font-size: 20px;
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  &__send {
+    display: block;
+    text-decoration: none;
+    width: 90%;
+    font-size: 20px;
+    margin: auto;
+    padding: 10px 0;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(27, 163, 231);
+  }
+  &__afterSend {
+    color: #fff;
+    font-size: 25px;
+    padding-top: 100px;
+    text-align: center;
+  }
+}
+
+.scrollMark {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: 50px;
+  &::before {
+    top: -35px;
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-image: url('../images/scroll_mark.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 29px;
+  }
+}
+
+.listenSongs {
+  color: #fff;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  font-weight: normal;
+  &__ul {
+    margin-top: 10px;
+    li {
+      display: inline-block;
+      width: 40%;
+      &:first-child {
+        margin-right: 10px;
+      }
+      a {
+        img {
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+.aboutMe {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 70px;
+  &__site {
+    width: calc(80% + 10px);
+    background-color: rgb(226, 20, 128);
+    padding: 10px 0;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 24px;
+  }
+}
+
+.otherActs {
+  margin-top: 70px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding-bottom: 50px;
+  h2 {
+    padding-bottom: 20px;
+  }
+  &__li {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.snsLinks {
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: 40%;
+    &:first-child {
+      margin-right: 10px;
+    }
+    a {
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}

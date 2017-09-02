@@ -1,0 +1,11 @@
+# dist
+node_modules
+.idea
+npm-debug.log
+dist
+
+Logs
+AWS_EC2.pem
+
+# src/statics/server/send-mail.js
+# dist/server/send-mail.js
