@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <style>
+    button {
+      width: 100%;
+      height: 100px;
+    }
+  </style>
+  <script src="../assets/scripts/admin.js"></script>
+  <title>🎥Admin🎥</title>
+</head>
+<body>
+  admin🎥
+  
+  <div>現在のモード：<span id="mode-name"></span></div>
+  
+  
+  <div id="buttonWrapper" style="display: none">
+    <button type="button" id="mode-before-live">Before Live</button>
+    <br>
+    <button type="button" id="mode-interactive-meteor-tutorial">流れ星モード（説明）</button>
+    <br>
+    <button type="button" id="mode-interactive-meteor">流れ星モードにする</button>
+    <br>
+    <button type="button" id="mode-after-live">After Live</button>  
+    <br>
+    <div style="width: 100%; font-size: 0">
+      <button type="button" id="midi-A" style="width: 25%">A</button>
+      <button type="button" id="midi-B" style="width: 25%">B</button>
+      <button type="button" id="midi-C" style="width: 25%">C</button>
+      <button type="button" id="midi-D" style="width: 25%">D</button>
+    </div>
+  </div>
+  
+  <input type="password" id="password">
+  <input type="submit" id="passwordSubmit" value="submit">
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 node_modules
 .idea
 npm-debug.log
-dist
+# dist
 
 Logs
 AWS_EC2.pem
