@@ -11,7 +11,6 @@ export default class KeyReciever {
     document.addEventListener('keydown', (e) => {
       switch (e.keyCode) {
         case 37:
-          console.log('back!');
           this.events[0]();
           break;
         case 39:
