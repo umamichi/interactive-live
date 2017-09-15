@@ -11,13 +11,13 @@ export default class KeyReciever {
     document.addEventListener('keydown', (e) => {
       switch (e.keyCode) {
         case 37:
-          this.events[0];
+          this.events[0]();
           break;
         case 39:
-          this.events[2];
+          this.events[2]();
           break;
         case 16:
-          this.events[1];
+          this.events[1]();
           break;
         default:
           return;

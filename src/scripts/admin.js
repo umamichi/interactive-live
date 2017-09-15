@@ -76,10 +76,10 @@ window.onload = () => {
     document.getElementById('midi-D').addEventListener('click', () => {
       proceedMode();
     });
-    document.getElementById('midi-B').addEventListener('click', () => {
-      // 星座を表示する
-      showConstellation();
-    });
+    // document.getElementById('midi-B').addEventListener('click', () => {
+    //   // 星座を表示する
+    //   showConstellation();
+    // });
     document.getElementById('midi-C').addEventListener('click', () => {
       // 夜になる
       startNight();
@@ -131,16 +131,16 @@ window.onload = () => {
   /**
    * 星座を表示する
    */
-  function showConstellation() {
-    if (window.modeName === 'INTERACTIVE_METEOR_TUTORIAL') {
-      socket.emit('SHOW_CONSTELLATION');
-      return;
-    }
-    if (window.modeName === 'INTERACTIVE_METEOR') {
-      socket.emit('SHOW_LAST_MESSAGE');
-      return;
-    }
-  }
+  // function showConstellation() {
+  //   if (window.modeName === 'INTERACTIVE_METEOR_TUTORIAL') {
+  //     socket.emit('SHOW_CONSTELLATION');
+  //     return;
+  //   }
+  //   if (window.modeName === 'INTERACTIVE_METEOR') {
+  //     socket.emit('SHOW_LAST_MESSAGE');
+  //     return;
+  //   }
+  // }
   /**
    * 夜になる
    */
@@ -148,6 +148,7 @@ window.onload = () => {
     if (window.modeName !== 'INTERACTIVE_METEOR') {
       return;
     }
+    console.log('start!');
     socket.emit('START_NIGHT');
   }
   
