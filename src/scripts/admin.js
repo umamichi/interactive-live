@@ -1,5 +1,6 @@
 import io from 'socket.io-client';
-import MidiReciever from './utils/MidiReciever';
+import KeyReciever from './utils/KeyReciever';
+// import MidiReciever from './utils/MidiReciever';
 
 window.onload = () => {
   const socket = io();
@@ -21,7 +22,10 @@ window.onload = () => {
   setEvents();
   
   // Midiを受け取る
-  new MidiReciever([backMode, showConstellation, startNight, proceedMode]);
+  // new MidiReciever([backMode, showConstellation, startNight, proceedMode]);
+
+  // key bind
+  new KeyReciever([backMode, startNight, proceedMode]);
 
   
   /**
@@ -155,25 +159,4 @@ window.onload = () => {
       MODE_NAME
     });
   }
-  
-  // key bind
-  document.addEventListener('keydown', (e) => {
-    // console.log('e.keyCode', e.keyCode);
-    switch (e.keyCode) {
-      case 49: 
-        console.log('1');
-        break;
-      case 50: 
-        console.log('2');
-        break;
-      case 51: 
-        console.log('3');
-        break;
-      case 52: 
-        console.log('4');
-        break;
-      default:
-        break;
-    }
-  });
 };
