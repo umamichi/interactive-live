@@ -1,5 +1,5 @@
 import C from '../constantsStage';
-import utils from '../utils/utils';
+import utils from '../../utils/utils';
 import _ from 'lodash';
 
 /**

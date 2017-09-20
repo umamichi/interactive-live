@@ -25,7 +25,7 @@ function rebundle(_firedByWatch) {
   const options = {
     entry: {
       'controller.js': './src/scripts/controller/controller.js',
-      'stage.js': './src/scripts/stage/stage.js',
+      './meteor/stage.js': './src/scripts/stage/meteor/stage.js',
       'admin.js': './src/scripts/admin.js',
       'controllerBeforeLive.js': './src/scripts/controller/controllerBeforeLive.js',
       'controllerAfterLive.js': './src/scripts/controller/controllerAfterLive.js',

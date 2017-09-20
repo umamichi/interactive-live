@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./assets/styles/controller.css">
+  <script src="./assets/scripts/controller.js"></script>
+  <title>馬道まさたか INTERACTIVE LIVE</title>
+</head>
+<body class="controllerBody">
+  <div id="controller" class="controller">
+    <div class="lockCurtain" :class="{ show: !isControll }">
+      <p class="lockCurtain__text">今は操作できません</p>
+    </div>
+    
+    <div class="lockCurtain" :class="{ show: isWaiting }">
+      <div class="chargingStarWrapper">
+        <div class="chargingStarBg"></div>
+        <div class="chargingStar" :class="{charging: isCharging}" :style="{transition: 'height '+ times.starChargeSec +'s linear'}"></div>
+      </div>
+      <p class="lockCurtain__text">星を送っています</p>
+      
+    </div>
+    
+    <div class="landscapeError">
+      <p class="txt">このコンテンツは、<br>端末を縦向きにしてお楽しみください。</p>
+    </div>
+    
+    <header class="header">
+      <img src="./assets/images/title_logo.png" class="header__title" alt="Masataka Umamichi Interactive Live">
+    </header>
+    
+    <main class="main">
+      <div class="shootingButton__wrapper">
+        <div class="shootingObject" 
+        :class="{ shooting: isShooting, show: isShowStar }"></div>
+        
+        <div class="buttonWrapper">
+          
+          <div v-for="(button, index)  in isAble" class="shootingButton" @touchstart="shooting(index)" v-show="!isShooting" :class="{ disable: !isAble[index] }">
+            <img class="shootingButton__able" src="assets/images/shootingButton.svg" alt="send button">
+            <img class="shootingButton__disable" src="assets/images/shootingButtonDisable.svg" alt="disable button">
+          </div>
+        </div>
+      </div>
+      
+      
+      <ul class="colorList">
+        <li v-for="color in colors" @touchstart="selectColor(color)" 
+        class="colorList__button" :class="{ selected: color.isSelected }" 
+        :style="{ backgroundColor: color.color }">{{color.color}}</li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>

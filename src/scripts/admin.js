@@ -59,11 +59,20 @@ window.onload = () => {
     document.getElementById('mode-before-live').addEventListener('click', () => {
       changeMode('BEFORE_LIVE');
     });
+    document.getElementById('mode-wait').addEventListener('click', () => {
+      changeMode('WAIT');
+    });
     document.getElementById('mode-interactive-meteor-tutorial').addEventListener('click', () => {
       changeMode('INTERACTIVE_METEOR_TUTORIAL');
     });
     document.getElementById('mode-interactive-meteor').addEventListener('click', () => {
       changeMode('INTERACTIVE_METEOR');
+    });
+    document.getElementById('mode-interactive-horse').addEventListener('click', () => {
+      changeMode('INTERACTIVE_HORSE');
+    });
+    document.getElementById('mode-interactive-sunrain').addEventListener('click', () => {
+      changeMode('INTERACTIVE_SUNRAIN');
     });
     document.getElementById('mode-after-live').addEventListener('click', () => {
       changeMode('AFTER_LIVE');
@@ -94,14 +103,23 @@ window.onload = () => {
     switch (window.modeName) {
       case 'BEFORE_LIVE':
         break;
-      case 'INTERACTIVE_METEOR_TUTORIAL':
+      case 'WAIT':
         changeMode('BEFORE_LIVE');
+        break;
+      case 'INTERACTIVE_METEOR_TUTORIAL':
+        changeMode('WAIT');
         break;
       case 'INTERACTIVE_METEOR':
         changeMode('INTERACTIVE_METEOR_TUTORIAL');
         break;
-      case 'AFTER_LIVE':
+      case 'INTERACTIVE_HORSE':
         changeMode('INTERACTIVE_METEOR');
+        break;
+      case 'INTERACTIVE_SUNRAIN':
+        changeMode('INTERACTIVE_HORSE');
+        break;
+      case 'AFTER_LIVE':
+        changeMode('INTERACTIVE_SUNRAIN');
         break;
       default:
         break;
@@ -113,12 +131,21 @@ window.onload = () => {
   function proceedMode() {
     switch (window.modeName) {
       case 'BEFORE_LIVE':
+        changeMode('WAIT');
+        break;
+      case 'WAIT':
         changeMode('INTERACTIVE_METEOR_TUTORIAL');
         break;
       case 'INTERACTIVE_METEOR_TUTORIAL':
         changeMode('INTERACTIVE_METEOR');
         break;
       case 'INTERACTIVE_METEOR':
+        changeMode('INTERACTIVE_HORSE');
+        break;
+      case 'INTERACTIVE_HORSE':
+        changeMode('INTERACTIVE_SUNRAIN');
+        break;
+      case 'INTERACTIVE_SUNRAIN':
         changeMode('AFTER_LIVE');
         break;
       case 'AFTER_LIVE':

@@ -7,8 +7,8 @@ import BackStarsLayer from './layer/BackStarsLayer';
 import MeteorLayer from './layer/MeteorLayer';
 import Meteor from './Meteor';
 import Constellation from './Constellation';
-import WebSocketReciever from './WebSocketReciever';
-import redirect from '../utils/redirect';
+import WebSocketReciever from '../WebSocketReciever';
+import redirect from '../../utils/redirect';
 
 // モードによって画面を切り替える
 redirect(true);
