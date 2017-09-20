@@ -4,12 +4,70 @@
   <meta charset="utf-8">
   <title>【Stage】horse馬道まさたか INTERACTIVE LIVE</title>
   <link rel="stylesheet" href="../assets/styles/stage.css">
-  <script src="../assets/scripts/meteor/stage.js"></script>
+  <script src="../assets/scripts/horse/stage.js"></script>
+  <style>
+    .wrapper {
+      position: relative;
+      margin: auto;
+    }
+    #myCanvas {
+      position: absolute;
+      z-index: 0;
+    }
+    .horseArea {
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+    .horseArea__inner {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+    .horse {
+      position: absolute;
+      bottom: 0;
+      right: -10%;
+      transition: right 40s linear, transform 2s ease-in;
+      animation: rotation 2s ease-in-out 0s infinite alternate;;
+    }
+    .horse--run {
+      right: 120%;
+    }
+    .background {
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+    
+    @keyframes rotation {
+      0% {
+        transform: rotateZ(-5deg);
+      }
+      100% {
+        transform: rotateZ(5deg);
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="wrapper">
+    <div class="background">
+      <img src="../assets/images/grassland.jpg" width="1920">
+    </div>
+      
+    <div class="horseArea">
+      <div class="horseArea__inner">
+        <img class="horse" id="horse" src="../assets/images/horse.png">
+      </div>
+    </div>
+    
+    <canvas id="mainCanvas" width="1920" height="1080"></canvas>
     horse
-    <canvas id="mainCanvas" width="1920" height="1080" style="background: #000;"></canvas>
     </div>
   </div>
 </body>

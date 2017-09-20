@@ -26,6 +26,8 @@ function rebundle(_firedByWatch) {
     entry: {
       'controller.js': './src/scripts/controller/controller.js',
       './meteor/stage.js': './src/scripts/stage/meteor/stage.js',
+      './horse/stage.js': './src/scripts/stage/horse/stage.js',
+      './sunrain/stage.js': './src/scripts/stage/sunrain/stage.js',
       'admin.js': './src/scripts/admin.js',
       'controllerBeforeLive.js': './src/scripts/controller/controllerBeforeLive.js',
       'controllerAfterLive.js': './src/scripts/controller/controllerAfterLive.js',
