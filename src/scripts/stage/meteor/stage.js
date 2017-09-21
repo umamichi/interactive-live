@@ -37,7 +37,7 @@ window.onload = () => {
 
   
   // WebSocketを受け取る
-  new WebSocketReciever(meteor, timeState, constellation);
+  new WebSocketReciever(meteor, timeState);
   
   animation(backgroundLayer, backgroundCurtainLayer, backStarsLayer, moonLayer, meteorLayer, meteor);
 };

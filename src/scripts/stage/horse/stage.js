@@ -5,9 +5,9 @@
 // import MoonLayer from './layer/MoonLayer';
 // import BackStarsLayer from './layer/BackStarsLayer';
 // import MeteorLayer from './layer/MeteorLayer';
-// import Meteor from './Meteor';
+import Horse from './Horse';
 // import Constellation from './Constellation';
-// import WebSocketReciever from '../WebSocketReciever';
+import WebSocketReciever from '../WebSocketReciever';
 import redirect from '../../utils/redirect';
 
 // モードによって画面を切り替える
@@ -16,19 +16,14 @@ redirect(true);
 window.onload = () => {
   console.log('horse/stage.js');
   
-  console.log(document.getElementById('horse'));
-  
-  document.getElementById('horse').classList.add('horse--run');
-
-  
   // // 星座を表示する
   // const constellation = new Constellation();
   // 
   // // 時間管理
   // const timeState = new TimeState(constellation);
   // 
-  // // 流れ星を管理する
-  // const meteor = new Meteor();
+  // 流れ星を管理する
+  const horse = new Horse();
   // 
   // // 背景レイヤー
   // const backgroundLayer = new BackgroundLayer();
@@ -44,7 +39,7 @@ window.onload = () => {
   // 
   // 
   // // WebSocketを受け取る
-  // new WebSocketReciever(meteor, timeState, constellation);
-  // 
+  new WebSocketReciever(horse, {});
+  
   // animation(backgroundLayer, backgroundCurtainLayer, backStarsLayer, moonLayer, meteorLayer, meteor);
 };

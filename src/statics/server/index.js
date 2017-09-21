@@ -69,9 +69,9 @@ io.on('connection', (socket) => {
     console.log('SHOW_LAST_MESSAGE');
   });
   // 夜になる
-  socket.on('START_NIGHT', () => {
-    io.emit('START_NIGHT');
-    console.log('START_NIGHT');
+  socket.on('START_ACTION', () => {
+    io.emit('START_ACTION');
+    console.log('START_ACTION');
   });
   
   // アンケートが送信されたとき

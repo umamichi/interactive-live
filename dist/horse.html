@@ -55,7 +55,7 @@
         
         <div class="buttonWrapper">
           
-          <div v-for="(button, index)  in isAble" class="shootingButton" @touchstart="shooting(index)" v-show="!isShooting" :class="{ disable: !isAble[index] }">
+          <div v-for="(button, index) in isAble" class="shootingButton" @touchstart="shooting(index)" v-show="!isShooting" :class="{ disable: !isAble[index] }">
             <img class="shootingButton__able" src="assets/images/shootingButton.svg" alt="send button">
             <img class="shootingButton__disable" src="assets/images/shootingButtonDisable.svg" alt="disable button">
           </div>

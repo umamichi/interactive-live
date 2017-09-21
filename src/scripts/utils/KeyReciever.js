@@ -9,6 +9,7 @@ export default class KeyReciever {
   
   setEvents() {
     document.addEventListener('keydown', (e) => {
+      // console.log(e.keyCode);
       switch (e.keyCode) {
         case 37:
           this.events[0]();
@@ -16,7 +17,7 @@ export default class KeyReciever {
         case 39:
           this.events[2]();
           break;
-        case 16:
+        case 32: // space
           this.events[1]();
           break;
         default:

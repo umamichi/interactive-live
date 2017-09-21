@@ -7,10 +7,10 @@ import io from 'socket.io-client';
  * WebSocketを受け取るクラス
  */
 export default class WebSocketReciever {
-  constructor(meteor, timeState, constellation) {
-    this.meteor = meteor;
+  constructor(mainInstance, timeState) {
+    this.mainInstance = mainInstance;
     this.timeState = timeState;
-    this.constellation = constellation;
+    // this.constellation = constellation;
     this.socket = null;
     this.init();
   }
@@ -20,26 +20,24 @@ export default class WebSocketReciever {
     
     // websocketが来たら流れ星を流す
     this.socket.on('SHOOTING', (data) => {
-      this.meteor.shooting(data);
+      this.mainInstance.shooting(data);
     });
     
-    // 星座を表示
-    this.socket.on('SHOW_CONSTELLATION', () => {
-      this.constellation.show();
-    });
+    // // 星座を表示
+    // this.socket.on('SHOW_CONSTELLATION', () => {
+    //   this.constellation.show();
+    // });
+    // 
+    // // 最後のメッセージを表示
+    // this.socket.on('SHOW_LAST_MESSAGE', () => {
+    //   this.constellation.showLastMessage();
+    // });
     
-    // 最後のメッセージを表示
-    this.socket.on('SHOW_LAST_MESSAGE', () => {
-      this.constellation.showLastMessage();
-    });
-    
-    
-    
-    // 夜になる
-    this.socket.on('START_NIGHT', () => {
-      console.log('START_NIGHT');
-      this.meteor.shooting();
-      this.constellation.hideAll(); // 星座をすべて隠す
+    // アクション開始
+    this.socket.on('START_ACTION', () => {
+      console.log('START_ACTION');
+      this.mainInstance.shooting();
+      // this.constellation.hideAll(); // 星座をすべて隠す
       this.timeState.start();
     });
   }

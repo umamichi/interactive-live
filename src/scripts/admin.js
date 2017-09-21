@@ -90,6 +90,8 @@ window.onload = () => {
     //   showConstellation();
     // });
     document.getElementById('midi-C').addEventListener('click', () => {
+      console.log('midi-C');
+      
       // 夜になる
       startNight();
     });
@@ -172,11 +174,11 @@ window.onload = () => {
    * 夜になる
    */
   function startNight() {
-    if (window.modeName !== 'INTERACTIVE_METEOR') {
+    if (window.modeName === 'INTERACTIVE_METEOR_TUTORIAL') {
       return;
     }
     console.log('start!');
-    socket.emit('START_NIGHT');
+    socket.emit('START_ACTION');
   }
   
   /**
