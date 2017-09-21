@@ -1,7 +1,6 @@
 // import utils from '../utils/utils';
 import moment from 'moment';
-import Vue from 'vue/dist/vue.js';
-import _ from 'lodash';
+import $ from 'jquery';
 
 /**
  * 馬を管理するクラス
@@ -9,24 +8,9 @@ import _ from 'lodash';
 export default class Horse {
   constructor() {
     this.init();
+    this.$horseAreaInner = $('#horseArea__inner');
+    console.log(this.$horseAreaInner);
     this.runningTimeSecond = 4 + 1;
-    
-    this.vue = new Vue({
-      el: '#horseArea__inner',
-      data: {
-        horses: [
-          // {
-          //   id: 0,
-          //   color: '#f00',
-          //   isRun: false
-          // }
-        ]
-      },
-      created() {
-      },
-      methods: {
-      }
-    });
   }
   
   init() {
@@ -36,8 +20,6 @@ export default class Horse {
         this.shooting({ color: '#fff' });
       }
     });
-    
-    setInterval(this.deleteOldHorse.bind(this), 1000);
   }
   
   /**
@@ -47,55 +29,23 @@ export default class Horse {
     console.log('shooting!', _data);
     
     const id = moment().format('YYYYMMDDHHmmSSS');
-    const config = {
-      id,
-      color: '#f00',
-      isRun: false,
-      isDelete: false
-    };
+    // const config = {
+    //   id,
+    //   color: '#f00',
+    //   isRun: false,
+    //   isDelete: false
+    // };
     
-    console.log(config);
-    
-    this.vue.$data.horses.push(config);
+    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse.png" id="${id}">`);
     
     // 走り出す
     setTimeout(() => {
-      _.forEach(this.vue.$data.horses, (horse) => {
-        if (horse.id === id) {
-          horse.isRun = true;
-        }
-      });
+      $(`#${id}`).addClass('horse--run');
     }, 100);
     
     // 走り終わったら馬消す
     setTimeout(() => {
-      _.forEach(this.vue.$data.horses, (horse) => {
-        if (horse.id === id) {
-          horse.isDelete = true;
-          // this.vue.$data.horses.splice(index, 1);
-          // return false;
-        }
-        // return true;
-      });
-      // console.log('this.vue.$data.horses', this.vue.horses);
+      $(`#${id}`).remove();
     }, this.runningTimeSecond * 1000);
-    
-    
-    // document.getElementById('horse').classList.add('horse--run');
-    // 
-    // this.$horseAreaInner.append('<img class="horse" id="horse" src="../assets/images/horse.png">');
-  }
-  
-  
-  deleteOldHorse() {
-    console.log('check');
-    const horses = _.cloneDeep(this.vue.$data.horses);
-    _.remove(horses, (deleteHorse) => {
-      if (deleteHorse.isDelete) {
-        console.log('delete!');
-      }
-      return deleteHorse.isDelete;
-    });
-    this.vue.$data.horses = horses;
   }
 }
