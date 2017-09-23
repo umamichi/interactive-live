@@ -14,9 +14,9 @@
     </div>
     
     <div class="lockCurtain" :class="{ show: isWaiting }">
-      <div class="chargingStarWrapper">
-        <div class="chargingStarBg"></div>
-        <div class="chargingStar" :class="{charging: isCharging}" :style="{transition: 'height '+ times.starChargeSec +'s linear'}"></div>
+      <div class="chargingWrapper">
+        <div class="chargingBg"></div>
+        <div class="charging" :class="{charging: isCharging}" :style="{transition: 'height '+ times.starChargeSec +'s linear'}"></div>
       </div>
       <p class="lockCurtain__text">星を送っています</p>
       <%# <p class="lockCurtain__text">星を送っています</p>%>

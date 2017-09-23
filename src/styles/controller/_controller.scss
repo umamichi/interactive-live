@@ -43,12 +43,12 @@
     display: block;
   }
   
-  .chargingStarWrapper {
+  .chargingWrapper {
     position: relative;
     margin-top: 70px;
     height: 235px;
   }
-  .chargingStarBg{
+  .chargingBg{
     width: 240px;
     height: 100%;
     background-image: url('../images/star-mask-bg.svg');
@@ -59,8 +59,12 @@
     right: 0;
     bottom: 0;
     margin: auto;
+    &--horse {
+      background-image: url('../images/star-mask-bg--horse.svg');
+      width: 200px;
+    }
   }
-  .chargingStar {
+  .charging {
     width: 240px;
     height: 0%;
     left: 0;
@@ -73,7 +77,12 @@
     -webkit-mask-position: bottom center;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100%;
-    &.charging {
+    &--horse {
+      mask-image: url('../images/star-mask--horse.svg');
+      width: 200px;
+      background-color: #542A03;
+    }
+    &--charging {
       height: 100%;
     }
   }
@@ -142,6 +151,10 @@
   opacity: 0;
   background-image: url('../images/star.png');
   background-size: 100%;
+  
+  &--horse {
+    background-image: url('../images/batei.png');
+  }
   
   &.shooting {
     transform: translateY(-500px);
