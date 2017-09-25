@@ -7,19 +7,18 @@ import $ from 'jquery';
  */
 export default class Horse {
   constructor() {
-    this.init();
     this.$horseAreaInner = $('#horseArea__inner');
-    console.log(this.$horseAreaInner);
     this.runningTimeSecond = 4 + 1;
+    this.init();
   }
   
   init() {
     // Enterで流す
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        this.shooting({ color: '#fff' });
-      }
-    });
+    // document.addEventListener('keydown', (e) => {
+    //   if (e.key === 'Enter') {
+    //     this.shooting({ color: '#fff' });
+    //   }
+    // });
   }
   
   /**
@@ -29,14 +28,10 @@ export default class Horse {
     console.log('shooting!', _data);
     
     const id = moment().format('YYYYMMDDHHmmSSS');
-    // const config = {
-    //   id,
-    //   color: '#f00',
-    //   isRun: false,
-    //   isDelete: false
-    // };
     
-    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse.png" id="${id}">`);
+    // 馬の高さ生成
+    const bottom = `${Math.floor(Math.random() * 35)}%`;
+    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse.png" id="${id}" style="bottom: ${bottom}">`);
     
     // 走り出す
     setTimeout(() => {
