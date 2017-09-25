@@ -258,9 +258,13 @@
   }
 }
 
-.abc {
-  display: inline-block;
-  &__aa {
-    font-size: 100px;
-  }
+.skinBg {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('../images/bg_horse_2.jpg');
+  background-size: cover;  
 }
+
