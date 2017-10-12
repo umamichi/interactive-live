@@ -32,7 +32,9 @@ window.onload = () => {
         { color: '#A0FE91', isSelected: false },
         { color: '#91D2FE', isSelected: false },
         { color: '#FE91F1', isSelected: false },
-      ]
+      ],
+      
+      isShowNoise: false
     },
     created() {
       // テストモード、1秒おきに星を飛ばそうとする
@@ -50,6 +52,14 @@ window.onload = () => {
       if (location.hash === '#tutorial') {
         this.isTutorial = true;
         this.isAble = [true];
+      }
+      
+      // 馬の画面だけ、雷を出すイベント定義
+      if (location.href.match(/horse/)) {
+        socket.on('START_ACTION', () => {
+          // console.log('START_ACTION');
+          this.isShowNoise = true;
+        });  
       }
     },
     methods: {

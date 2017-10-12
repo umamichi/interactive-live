@@ -1,5 +1,5 @@
 // import animation from './animation';
-// import TimeState from './TimeState';
+import TimeState from './TimeState';
 // import BackgroundLayer from './layer/BackgroundLayer';
 // import BackgroundCurtainLayer from './layer/BackgroundCurtainLayer';
 // import MoonLayer from './layer/MoonLayer';
@@ -20,7 +20,7 @@ window.onload = () => {
   // const constellation = new Constellation();
   // 
   // // 時間管理
-  // const timeState = new TimeState(constellation);
+  const timeState = new TimeState();
   // 
   // 流れ星を管理する
   const horse = new Horse();
@@ -39,7 +39,7 @@ window.onload = () => {
   // 
   // 
   // // WebSocketを受け取る
-  new WebSocketReciever(horse, {});
+  new WebSocketReciever(horse, timeState);
   
   // animation(backgroundLayer, backgroundCurtainLayer, backStarsLayer, moonLayer, meteorLayer, meteor);
 };

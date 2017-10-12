@@ -8,7 +8,7 @@
   <title>HORSE 馬道まさたか INTERACTIVE LIVE</title>
   <style>
     .noise {
-      display: none;
+      /*display: none;*/
       background: url('./assets/images/noise.gif');
       background-repeat: repeat;
       position: fixed;
@@ -19,9 +19,6 @@
       left: 0;
       right: 0;
       z-index: 1000;
-    }
-    .noise--show {
-      display: block;
     }
   </style>
 </head>
@@ -71,9 +68,9 @@
         :style="{ backgroundColor: color.color }">{{color.color}}</li>
       </ul>
     </main>
+
+    <%# noise%>
+    <div class="noise" v-if="isShowNoise"></div>
   </div>
-  
-  <div class="noise"></div>
-    
 </body>
 </html>
