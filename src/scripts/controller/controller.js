@@ -39,11 +39,16 @@ window.onload = () => {
     created() {
       // テストモード、1秒おきに星を飛ばそうとする
       if (location.hash === '#testmode') {
+        // チュートリアルモードの設定にしておく
+        this.isTutorial = true;
+        this.isAble = [true];
+        
         setInterval(() => {
           if (!this.isShooting) {
-            const randNum = Math.floor(Math.random() * ( this.colors.length + 1 ));
+            const randNum = Math.floor(Math.random() * ( this.colors.length ));
+            // console.log('randNum', randNum);
             this.selectColor(this.colors[randNum]);
-            this.shooting();  
+            this.shooting(0);  
           }
         }, 1000);
       }
@@ -65,6 +70,7 @@ window.onload = () => {
     methods: {
       // 色を選択
       selectColor(color) {
+        // console.log('color', color);
         this.colors.forEach((_color) => {
           _color.isSelected = false;
         });
