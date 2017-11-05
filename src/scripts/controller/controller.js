@@ -25,7 +25,7 @@ window.onload = () => {
       //   filter: 'drop-shadow(0px 0px 10px #fff) drop-shadow(0px 0px 10px #fff) drop-shadow(0px 0px 10px #fff) drop-shadow(0px 0px 10px #fff)'
       // },
       colors: [
-        { color: '#fff', isSelected: true },
+        { color: '#FFFFFF', isSelected: true },
         { color: '#FE9191', isSelected: false },
         { color: '#FECE91', isSelected: false },
         

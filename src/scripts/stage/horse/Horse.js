@@ -28,10 +28,11 @@ export default class Horse {
     console.log('shooting!', _data);
 
     const id = moment().format('YYYYMMDDHHmmSSS');
+    const color = _data.color.replace(/#/, '');
 
     // 馬の高さ生成
     const bottom = `${Math.floor(Math.random() * 35)}%`;
-    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse${_data.color}.png" id="${id}" style="bottom: ${bottom}">`);
+    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse${color}.png" id="${id}" style="bottom: ${bottom}">`);
 
     // 走り出す
     setTimeout(() => {
