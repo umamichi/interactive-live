@@ -11,7 +11,7 @@ export default class Horse {
     this.runningTimeSecond = 4 + 1;
     this.init();
   }
-  
+
   init() {
     // Enterで流す
     // document.addEventListener('keydown', (e) => {
@@ -20,24 +20,24 @@ export default class Horse {
     //   }
     // });
   }
-  
+
   /**
    * 流す
    */
-  shooting(_data = { color: '#f0f0f0' }) {
+  shooting(_data = { color: '#FFFFFF' }) {
     console.log('shooting!', _data);
-    
+
     const id = moment().format('YYYYMMDDHHmmSSS');
-    
+
     // 馬の高さ生成
     const bottom = `${Math.floor(Math.random() * 35)}%`;
-    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse.png" id="${id}" style="bottom: ${bottom}">`);
-    
+    $('#horseArea__inner').append(`<img class="horse" src="../assets/images/horse${_data.color}.png" id="${id}" style="bottom: ${bottom}">`);
+
     // 走り出す
     setTimeout(() => {
       $(`#${id}`).addClass('horse--run');
     }, 100);
-    
+
     // 走り終わったら馬消す
     setTimeout(() => {
       $(`#${id}`).remove();
