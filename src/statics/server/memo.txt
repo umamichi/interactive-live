@@ -1,6 +1,0 @@
-状態(state)の定義
-
-1. 開場中（インタラクティブデモ） BEFORE_LIVE
-2. 流れ星の（インタラクティブ）INTERACTIVE_METEOR
-3. cyanさんの映像 MOVIE_1
-4. イベント終了後 AFTER_LIVE

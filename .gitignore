@@ -2,9 +2,8 @@
 node_modules
 .idea
 npm-debug.log
-# dist
 
-Logs
+# Logs
 AWS_EC2.pem
 
 # src/statics/server/send-mail.js

@@ -22,12 +22,13 @@ const sendEnquete = (text) => {
 
   fetch(myRequest, myInit)
   .then((response) => {
+    // console.log('response', response);
     response.json().then((json) => {
       return ({ json, response });
     });
   }).then((json, response) => {
     console.log(json);
-    console.log(response.ok);
+    console.log(response);
   });
 };
 
