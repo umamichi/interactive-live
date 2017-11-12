@@ -8,6 +8,7 @@ export default class TimeState {
     this.constellation = constellation;
     this.time = 0;
     this.$cloudDom = document.getElementById('cloud');
+    this.isStart = false;
   }
   
   /**
@@ -21,6 +22,11 @@ export default class TimeState {
    * 時間経過開始
    */
   start() {
+    if (this.isStart) {
+      return;
+    }
+    this.isStart = true;
+    
     const second = 60 * 4 + 12;
     const speed = (100 * 0.1) / second;
     // const second = 120;
