@@ -5,6 +5,29 @@ const socket = io();
 redirect(); // リダイレクト
 
 window.onload = () => {
+  let colors = [
+    { color: '#FFFFFF', isSelected: true },
+    { color: '#FE9191', isSelected: false },
+    { color: '#FECE91', isSelected: false },
+    
+    { color: '#A0FE91', isSelected: false },
+    { color: '#91D2FE', isSelected: false },
+    { color: '#FE91F1', isSelected: false },
+  ];
+  // 馬の時だけdefaultを赤にする
+  if (location.href.match(/horse/)) {
+    colors = [
+      { color: '#FF0000', isSelected: true },
+      { color: '#FE9191', isSelected: false },
+      { color: '#FECE91', isSelected: false },
+      
+      { color: '#A0FE91', isSelected: false },
+      { color: '#91D2FE', isSelected: false },
+      { color: '#FE91F1', isSelected: false },
+    ];
+  }
+  
+  
   // controll vue
   new Vue({
     el: '#controller',
@@ -24,15 +47,7 @@ window.onload = () => {
       //   background: '#fff',
       //   filter: 'drop-shadow(0px 0px 10px #fff) drop-shadow(0px 0px 10px #fff) drop-shadow(0px 0px 10px #fff) drop-shadow(0px 0px 10px #fff)'
       // },
-      colors: [
-        { color: '#FFFFFF', isSelected: true },
-        { color: '#FE9191', isSelected: false },
-        { color: '#FECE91', isSelected: false },
-        
-        { color: '#A0FE91', isSelected: false },
-        { color: '#91D2FE', isSelected: false },
-        { color: '#FE91F1', isSelected: false },
-      ],
+      colors,
       
       isShowNoise: false
     },
@@ -64,7 +79,7 @@ window.onload = () => {
         socket.on('START_ACTION', () => {
           // console.log('START_ACTION');
           this.isShowNoise = true;
-        });  
+        });
       }
     },
     methods: {
