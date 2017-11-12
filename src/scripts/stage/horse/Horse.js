@@ -14,11 +14,11 @@ export default class Horse {
 
   init() {
     // Enterで流す
-    // document.addEventListener('keydown', (e) => {
-    //   if (e.key === 'Enter') {
-    //     this.shooting({ color: '#fff' });
-    //   }
-    // });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        this.shooting();
+      }
+    });
   }
 
   /**
