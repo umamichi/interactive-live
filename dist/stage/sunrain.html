@@ -4,9 +4,73 @@
   <meta charset="utf-8">
   <title>【Stage】馬道まさたか INTERACTIVE LIVE</title>
   <link rel="stylesheet" href="../assets/styles/stage.css">
-  <script src="../assets/scripts/meteor/stage.js"></script>
+  <script src="../assets/scripts/sunrain/stage.js"></script>
+  
+  <style>
+    .wrapper {
+      position: relative;
+      margin: auto;
+      display: none;
+    }
+    .background {
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+    .horse {
+      position: fixed;
+      z-index: 1;
+    }
+    .horse-1 {
+      animation: jump 0.5s cubic-bezier(0.22, 0.44, 0.3, 0.84) 0s infinite alternate;
+      top: 800px;
+      left: 660px;
+    }
+    .horse-2 {
+      animation: jump 0.5s cubic-bezier(0.22, 0.44, 0.3, 0.84) 0.11s infinite alternate;
+      top: 640px;
+      left: 900px;
+    }
+    .horse-3 {
+      animation: jump 0.5s cubic-bezier(0.22, 0.44, 0.3, 0.84) 0.54s infinite alternate;
+      top: 820px;
+      left: 1160px;
+    }
+    .horse-4 {
+      animation: jump 0.5s cubic-bezier(0.22, 0.44, 0.3, 0.84) 0.46s infinite alternate;
+      top: 630px;
+      left: 1340px;
+    }
+    .horse-5 {
+      animation: jump 0.5s cubic-bezier(0.22, 0.44, 0.3, 0.84) 0.32s infinite alternate;
+      top: 790px;
+      left: 1630px;
+    }
+    
+    @keyframes jump {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100px);
+      }
+    }
+  </style>
 </head>
 <body>
-  sunrain
+  <body>
+    <div class="wrapper" id="wrapper">
+      <div class="background">
+        <img src="../assets/images/grassland-rainbow.jpg" width="1920">
+      </div>
+      
+      <img class="horse horse-1" src="../assets/images/horse-1.png">
+      <img class="horse horse-2" src="../assets/images/horse-2.png">
+      <img class="horse horse-3" src="../assets/images/horse-3.png">
+      <img class="horse horse-4" src="../assets/images/horse-4.png">
+      <img class="horse horse-5" src="../assets/images/horse-5.png">
+    </div>
+  </body>
 </body>
 </html>

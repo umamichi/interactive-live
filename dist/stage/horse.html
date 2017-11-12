@@ -10,9 +10,11 @@
       position: relative;
       margin: auto;
     }
-    #myCanvas {
+    .background {
       position: absolute;
-      z-index: 0;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
     }
     .horseArea {
       position: absolute;
@@ -37,12 +39,6 @@
     }
     .horse--run {
       right: 120%;
-    }
-    .background {
-      position: absolute;
-      z-index: 1;
-      height: 100%;
-      width: 100%;
     }
     
     @keyframes rotation {
