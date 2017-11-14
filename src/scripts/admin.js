@@ -68,6 +68,9 @@ window.onload = () => {
     document.getElementById('mode-interactive-meteor').addEventListener('click', () => {
       changeMode('INTERACTIVE_METEOR');
     });
+    document.getElementById('mode-before-horse').addEventListener('click', () => {
+      changeMode('BEFORE_HORSE');
+    });
     document.getElementById('mode-interactive-horse').addEventListener('click', () => {
       changeMode('INTERACTIVE_HORSE');
     });
@@ -114,8 +117,11 @@ window.onload = () => {
       case 'INTERACTIVE_METEOR':
         changeMode('INTERACTIVE_METEOR_TUTORIAL');
         break;
-      case 'INTERACTIVE_HORSE':
+      case 'BEFORE_HORSE':
         changeMode('INTERACTIVE_METEOR');
+        break;
+      case 'INTERACTIVE_HORSE':
+        changeMode('BEFORE_HORSE');
         break;
       case 'INTERACTIVE_SUNRAIN':
         changeMode('INTERACTIVE_HORSE');
@@ -142,6 +148,9 @@ window.onload = () => {
         changeMode('INTERACTIVE_METEOR');
         break;
       case 'INTERACTIVE_METEOR':
+        changeMode('BEFORE_HORSE');
+        break;
+      case 'BEFORE_HORSE':
         changeMode('INTERACTIVE_HORSE');
         break;
       case 'INTERACTIVE_HORSE':

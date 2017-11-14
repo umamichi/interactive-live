@@ -56,6 +56,9 @@ export default function redirect(isStage = false) {
       case 'INTERACTIVE_METEOR':
         nextUrl = '/stage/meteor.html#production';
         break;
+      case 'BEFORE_HORSE':
+        nextUrl = '/stage/beforeHorse.html';
+        break;
       case 'INTERACTIVE_HORSE':
         nextUrl = '/stage/horse.html';
         break;
@@ -90,6 +93,9 @@ export default function redirect(isStage = false) {
       case 'INTERACTIVE_METEOR':
         // productionをつけないと下のif文が動かないからつけとく
         nextUrl = '/meteor.html#production';
+        break;
+      case 'BEFORE_HORSE':
+        nextUrl = '/beforeHorse.html';
         break;
       case 'INTERACTIVE_HORSE':
         // productionをつけないと下のif文が動かないからつけとく
